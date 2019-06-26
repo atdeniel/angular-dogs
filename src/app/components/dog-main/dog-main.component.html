@@ -1,0 +1,75 @@
+<div class="container">
+
+    <div class="jumbotron">
+        <h5>The Dog App</h5>
+        <br>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Dogs:</label>
+                    <select class="form-control" (change)="onSelect($event.target.value)">
+                        <option selected> Please select one option </option>
+                        <option *ngFor="let dog of dogs" [value]='dog.id' >{{dog.breed}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-primary" (click)="addFilter()">Add filter</button>
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-success" (click)="filter()">Show me!</button>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <label>Sub Breed:</label>
+                <li class="list-group-item" *ngFor="let suBreed of subreeds">
+                    {{suBreed}}
+                </li>
+            </div>
+
+            <div class="col-md-4">
+                <label>Filters:</label>
+                <div class="row">    
+                    <ul class="list-group col-md-12">   
+                        <li class="list-group-item" *ngFor="let filter of filters">
+                            <div>
+                            {{filter}}
+                            <button type="button" class="btn btn-danger float-right" (click)="removeFilter(filter)" >x</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            
+            
+        </div>
+        <br>
+        
+
+    </div>
+
+
+    <div class="row mid">
+            <app-dog-item *ngFor="let image of dogImages" [dogImages]="image">
+            </app-dog-item>
+    </div>
+    
+    <hr>
+    <footer>
+        <div class="row">
+            <div class="col-md-6">
+                <p>Made By: Jose Moros</p>
+                <p>Librer&iacute;a UI: Bootstrap. Se selecciono Bootstrap debido que posee muchos componentes configurables, relativamente f&aacute;cil de usar
+                    ,tiene un gran apoyo de la comunidad y documentaci&oacute;n clara y r&aacute;pida. </p>
+                <p>Framework js: Angular. Se selecciono Angular d&eacute;bido que nos provee herramientas confiables para crar una aplicaci&oacute;n web. 
+                    Gracias a sus componentes permite que la aplicaci&oacute;n se escalable con el tiempo,nos otorga fiabilidad y flexibilidad.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+  

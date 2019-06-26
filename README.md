@@ -1,2 +1,2 @@
-# angular-dogs
-Prueba técnica Mobdev
+#Prueba técnica Mobdev
+Hecho por Jose Moros.
